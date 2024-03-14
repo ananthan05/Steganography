@@ -1,6 +1,9 @@
 Question
 1.	Read a text as secret and covert to binary then embedded , Extract the embedded text from the image
 
+2.	Calculate the psnr for the stego image, do visual attack and histogram attack
+
+
 ```
 %Encoding the message
 original=imread('pngtree.jpg');
@@ -94,11 +97,7 @@ disp(['The original message is: ',original_message]);
 % Calculate PSNR for the stego image
 psnr_value = psnr(stego, cover);
 disp(['PSNR for the stego image: ', num2str(psnr_value), ' dB']);
-```
 
-2.	Calculate the psnr for the stego image, do visual attack and histogram attack
-
-```
 % Visual Attack: Display the cover image and the stego image side by side for visual inspection
 figure;
 subplot(1,2,1);
