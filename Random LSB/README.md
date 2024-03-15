@@ -81,3 +81,30 @@ original_message = char(bin2dec(reshape(message_in_bits, 8, [])'))';
 % Display the original message
 disp(['The original message is: ', original_message]);
 ```
+
+2.Calculate the psnr for the stego image, do visual attack and histogram attack.
+
+```
+% Calculate PSNR for the stego image
+psnr_value = psnr(stego, cover);
+disp(['PSNR for the stego image: ', num2str(psnr_value), ' dB']);
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Visual Attack: Display the cover image and the stego image side by side for visual inspection
+figure;
+subplot(1,2,1);
+imshow(cover);
+title('Cover Image');
+subplot(1,2,2);
+imshow(stego);
+title('Stego Image');
+% Histogram Attack: Display the histograms of cover and stego images for comparison
+figure;
+subplot(2,1,1);
+imhist(cover);
+title('Histogram of Cover Image');
+subplot(2,1,2);
+imhist(stego);
+title('Histogram of Stego Image');
+```
